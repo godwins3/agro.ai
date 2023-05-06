@@ -1,0 +1,152 @@
+<!-- {% extends 'layout.html' %} -->
+
+{% block body %}
+
+<style>
+    body {
+        
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        font-family: Arial, sans-serif;
+    }
+    #logo {
+        float: left;
+        width: 25%;
+        padding-top: 10px;
+    }
+    #form-wrapper {
+        margin: 0 auto;
+        width: 50%;
+        padding-top: 50px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 4px;
+        padding: 20px;
+    }
+    input[type="text"], input[type="password"] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+    }
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .icon {
+        width: 50%;
+        text-align: center;
+        display: inline-block;
+    }
+    .alt-login {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .alt-login button {
+        background-color: #3b5998;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 40%;
+        font-size: 16px;
+    }
+    .alt-login button:first-child {
+        margin-right: 5%;
+    }
+    .alt-login button:hover {
+        opacity: 0.8;
+    }
+               /*To make the input fields transparent and darken the placeholders, you can use the following CSS code*/
+    input[type="text"], input[type="password"], input[type="tel"] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 2px solid rgba(255, 255, 255, 0.5); /* make border transparent */
+      border-radius: 4px;
+      background-color: rgba(0, 0, 0, 0.3); /* make background transparent */
+      color: #fff; /* set text color to white */
+    }
+    
+    input[type="text"]::placeholder,
+    input[type="password"]::placeholder,
+    input[type="tel"]::placeholder {
+      color: rgba(255, 255, 255, 0.5); /* darken placeholder text color */
+    }
+      /*To make the input fields translucent on hover and when active, you can use the following CSS code: */
+      input[type="text"]:hover,
+    input[type="password"]:hover,
+    input[type="tel"]:hover,
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    input[type="tel"]:focus {
+      background-color: rgba(0, 0, 0, 0.5); /* make background translucent on hover and when active */
+      border-color: rgba(255, 255, 255, 0.8); /* make border more visible on hover and when active */
+    }
+    
+    </style>
+    <div>
+      <div id="logo">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" style="width: 100px; height: 50px"alt="">
+      </div>
+      <div id="form-wrapper">
+        <form action="" method="post">
+        <div>
+          <h2>Sign Up</h2>
+        </div>
+        <div>
+          <label for="username"></label>
+          <input type="text" id="username" name="username" placeholder="Username">
+        </div>
+        <div>
+          <label for="phone"></label>
+          <input type="tel" id="phone" name="phone" placeholder="Phone">
+        </div>
+        <div>
+          <label for="email"></label>
+          <input type="email" id="email" name="email" placeholder="Email" style="display:none;">
+        </div>
+        <div>
+          <label for="password"></label>
+          <input type="password" id="password" name="password" placeholder="Password">
+        </div>
+        <div>
+          <label for="confirm-password"></label>
+          <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password">
+        </div>
+        <div>
+          <input type="submit" value="Sign Up">
+        </div>
+        </form>
+      </div>
+    </div>
+    <script>
+      const emailInput = document.getElementById('email');
+      const phoneInput = document.getElementById('phone');
+      const altLoginButtons = document.querySelectorAll('.alt-login button');
+      
+      altLoginButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          if (button.innerText === 'Sign Up with Facebook') {
+            emailInput.placeholder = 'Facebook';
+          } else {
+            emailInput.placeholder = 'Email';
+          }
+          phoneInput.style.display = 'none';
+          emailInput.style.display = 'block';
+        }); cd
+      });
+    </script>
+
+{% endblock %}
