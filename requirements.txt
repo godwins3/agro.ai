@@ -94,3 +94,6 @@ widgetsnbextension==3.5.1
 wrapt==1.12.1
 xgboost==1.2.1
 yarg==0.1.9
+torch
+torchvision
+torchaudio
