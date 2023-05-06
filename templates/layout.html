@@ -118,77 +118,13 @@ h2 {
 
 <body>
 
-	<!-- Navigation -->
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-		<div class="container">
-			<a class="navbar-brand" href="{{ url_for('home') }}">
-				<img src="{{ url_for('static', filename='images/logo.png') }}" style="width: 100px; height: 50px"alt="">
-			</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse"
-				data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarResponsive">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active">
-						<a class="nav-link" href="{{ url_for('home') }}">Home
-							<span class="sr-only">(current)</span>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{{ url_for('crop_recommend') }}">Crop</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{{ url_for('fertilizer_recommendation') }}">Fertilizer</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{{ url_for('disease_prediction') }}">Disease</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{{ url_for('signup') }}">Account</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-
-
+	
 
 
 	{% block body %} {% endblock %}
 
 	<!-- footer -->
-	<footer class="text-center py-5">
-		<div class="container py-md-3">
-			<!-- logo -->
-			<h2 class="logo2 text-center">
-				<a href="{{ url_for('home') }}">
-					<span class="fa fa-leaf"></span> agroml
-				</a>
-			</h2>
-			<!-- //logo -->
-			<!-- address -->
-			<div class="contact-left-footer mt-4">
-
-				<p class="homelogo">
-					<a href="{{ url_for('home') }}">Home</a>
-
-				
-
-					<!-- <a href="community.html">Community</a> -->
-				</p>
-			</div>
-			<div class="w3l-copy text-center">
-				<p class="text-da">An Environmental Intelligence Startup<br> </p>
-			</div>
-		</div>
-	</footer>
-	<!-- //footer -->
-
-	<!-- move top icon -->
-	<a href="#home" class="move-top text-center"></a>
-	<!-- //move top icon -->
+	
 </body>
 
 </html>
