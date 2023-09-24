@@ -1,6 +1,6 @@
 # Importing essential libraries and modules
 
-from flask import Flask, render_template, request, Markup
+from flask import Flask, render_template, request, Markup, redirect
 import numpy as np
 import pandas as pd
 from disease_dic import disease_dic
@@ -14,6 +14,7 @@ import torch
 from torchvision import transforms
 from PIL import Image
 from model import ResNet9
+from flask import jsonify
 
 
 # ==============================================================================================
@@ -261,6 +262,13 @@ def disease_prediction():
 
     return render_template('disease.html')
 
+@app.route('/test')
+def test():
+    message = {"Name": "Isariopsis_Leaf_Spot", "Type": "Leaf Spot"}
+    return message
+
+# ===============================================================================================
+# api endpoints for agro ai
 
 # ===============================================================================================
 if __name__ == '__main__':
